@@ -12,6 +12,7 @@ class App extends Component {
       dataEntries: [],
     };
     this.onSubmit = this.onSubmit.bind(this);
+    this.callAPI = this.callAPI.bind(this);
   }
   async onSubmit(postData) {
     await console.log(postData);
@@ -20,11 +21,20 @@ class App extends Component {
     });
     await console.log(this.state.dataEntries);
   }
+  callAPI() {
+    fetch("http://localhost:9000/testAPI")
+      .then(res => res.text())
+      .then(res => this.setState({ apiResponse: res }));
+  }
+  componentWillMount() {
+    this.callAPI();
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <BlogPost onSubmit={this.onSubmit}></BlogPost>
+          <p>{this.state.apiResponse}</p>
         </header>
       </div>
     );
