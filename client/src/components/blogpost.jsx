@@ -3,18 +3,27 @@ import React, { Component } from 'react';
 class BlogPost extends Component {
     constructor(props) {
         super(props);
-        this.state = { blogText: "" };
+        this.state = { blogText: "", blogHeaderText: "" };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
+    /// function called upon "Submit" button being pressed.
     onSubmit(e) {
         e.preventDefault();
-        this.props.onSubmit(this.state.blogText);
+        this.props.onSubmit({ "blogHeaderText": this.state.blogHeaderText, "blogText": this.state.blogText });
     }
+    /// function called as values within textarea is changed.
     onChange(e) {
-        this.setState({
-            blogText: e.target.value,
-        })
+        if (e.target.name == "title-input") {
+            this.setState({
+                blogHeaderText: e.target.value,
+            });
+        }
+        else {
+            this.setState({
+                blogText: e.target.value,
+            });
+        }
     }
 
     render() {

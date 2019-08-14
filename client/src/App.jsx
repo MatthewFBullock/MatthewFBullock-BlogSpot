@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import BlogPost from './components/blogpost';
 import SideBar from './components/sidebar';
+import BlogOutput from './components/blogoutput';
 import { Component } from 'react';
 
 class App extends Component {
@@ -35,6 +36,7 @@ class App extends Component {
         <header className="App-header">
           <BlogPost onSubmit={this.onSubmit}></BlogPost>
           <SideBar></SideBar>
+          <BlogOutput data={this.state.dataEntries}></BlogOutput>
           <p>{this.state.apiResponse}</p>
         </header>
       </div>
