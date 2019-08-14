@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 class BlogPost extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {blogText: ""};
+        this.state = { blogText: "" };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -19,7 +19,10 @@ class BlogPost extends Component {
 
     render() {
         return (
-            <div>
+            <div class="container">
+                <form>
+                    <textarea name="title-input" cols="100" placeholder="Insert your bullshit title here" onChange={this.onChange}></textarea>
+                </form>
                 <form>
                     <textarea name="blog-input" rows="10" cols="100" placeholder="Insert your bullshit here" onChange={this.onChange}></textarea>
                     <br></br>
