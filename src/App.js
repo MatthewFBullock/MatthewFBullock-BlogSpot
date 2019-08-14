@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Fish from './components/fish';
 import BlogPost from './components/blogpost';
+import SideBar from './components/sidebar';
 import { Component } from 'react';
 
 class App extends Component {
@@ -25,6 +25,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <BlogPost onSubmit={this.onSubmit}></BlogPost>
+          <SideBar></SideBar>
         </header>
       </div>
     );
