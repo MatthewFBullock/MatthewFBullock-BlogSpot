@@ -10,8 +10,8 @@ class SideBar extends Component {
     }
     render() {
         return (
-            <aside class="sidebar">
-                <div class="sidebar-text">
+            <aside className="sidebar">
+                <div className="sidebar-text">
                     <h3>Test code</h3>
                     <h3>{BlogPost.onChange}</h3>
                 </div>
