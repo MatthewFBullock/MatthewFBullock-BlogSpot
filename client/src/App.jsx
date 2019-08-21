@@ -5,6 +5,7 @@ import BlogPost from './components/blogpost';
 import SideBar from './components/sidebar';
 import BlogOutput from './components/blogoutput';
 import { Component } from 'react';
+import axios from 'axios';
 
 class App extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class App extends Component {
       dataEntries: this.state.dataEntries.concat(postData)
     });
     await console.log(this.state.dataEntries);
+    axios.post('http://localhost:9000/blogpost', postData);
   }
   callAPI() {
     fetch("http://localhost:9000/testAPI")
