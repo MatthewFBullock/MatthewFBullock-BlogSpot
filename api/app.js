@@ -12,7 +12,7 @@ var testAPIRouter = require('./routes/testAPI');
 
 //const MongoClient = require('mongodb').MongoClient;
 const password = "Matt0614%2E";
-const uri = `mongodb:srv://matthewfbullock:${password}@blog-wrn0l.mongodb.net/test?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://matthewfbullock:${password}@blog-wrn0l.mongodb.net/test?retryWrites=true&w=majority`;
 // const client = new MongoClient(uri, {
 //   useNewUrlParser: true
 // });
