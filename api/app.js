@@ -10,18 +10,8 @@ var usersRouter = require('./routes/users');
 var blogpost = require('./routes/blogpost');
 var testAPIRouter = require('./routes/testAPI');
 
-//const MongoClient = require('mongodb').MongoClient;
 const password = "Matt0614%2E";
 const uri = `mongodb+srv://matthewfbullock:${password}@blog-wrn0l.mongodb.net/test?retryWrites=true&w=majority`;
-// const client = new MongoClient(uri, {
-//   useNewUrlParser: true
-// });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   console.log("Connected...");
-//   // perform actions on the collection object
-//   client.close();
-// });
 
 const mongoose = require('mongoose');
 mongoose.connect(uri, {
