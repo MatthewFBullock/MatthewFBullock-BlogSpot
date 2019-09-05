@@ -15,6 +15,7 @@ class App extends Component {
     };
     this.onSubmit = this.onSubmit.bind(this);
     this.callAPI = this.callAPI.bind(this);
+    this.componentWillMount = this.componentWillMount.bind(this);
   }
   async onSubmit(postData) {
     await console.log(postData);
@@ -29,9 +30,15 @@ class App extends Component {
       .then(res => res.text())
       .then(res => this.setState({ apiResponse: res }));
   }
-  componentWillMount() {
+  async componentWillMount() {
     this.callAPI();
+    let result = await axios.get('http://localhost:9000/blogpost');
+    console.log(result.data);
+    this.setState({
+      dataEntries: result.data,
+    });
   }
+
   render() {
     return (
       <div className="App">
