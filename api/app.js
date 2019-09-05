@@ -11,16 +11,6 @@ var usersRouter = require('./routes/users');
 var blogpost = require('./routes/blogpost');
 var testAPIRouter = require('./routes/testAPI');
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = process.env.mongo_URI;
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  console.log("Connected...");
-  // perform actions on the collection object
-  client.close();
-});
-
 var app = express();
 app.use(cors());
 
