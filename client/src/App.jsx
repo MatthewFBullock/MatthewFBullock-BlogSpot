@@ -30,6 +30,7 @@ class App extends Component {
       .then(res => res.text())
       .then(res => this.setState({ apiResponse: res }));
   }
+
   async componentWillMount() {
     this.callAPI();
     let result = await axios.get('http://localhost:9000/blogpost');
