@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
-import BlogPost from './blogpost';
+import { Row, Col } from 'react-bootstrap/';
 
 class BlogEncapsulation extends Component {
-
-    setBlogPost(header, body) {
-        this.header = header;
-        this.body = body;
-    }
-
-    getBlogHeader() {
-        return this.header;
-    }
-
-    getBlogBody() {
-        return this.body;
-    }
-
     render() {
         return (
-            <div>
-
-            </div>
+            <Row>
+                <Col>
+                    {this.props.header}
+                </Col>
+                <Col>
+                    {this.props.body}
+                </Col>
+            </Row>
         );
     }
 }

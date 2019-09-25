@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 
-class BlogPost extends Component {
+class BlogInput extends Component {
     constructor(props) {
         super(props);
         this.state = { blogText: "", blogHeaderText: "" };
@@ -35,11 +36,11 @@ class BlogPost extends Component {
                 <form>
                     <textarea name="blog-input" rows="10" cols="100" placeholder="Insert your bullshit here" onChange={this.onChange}></textarea>
                     <br></br>
-                    <input id="submit" type="submit" onClick={this.onSubmit}></input>
+                    <Button id="submit" type="submit" onClick={this.onSubmit}>Submit</Button>
                 </form>
             </div>
         );
     }
 }
 
-export default BlogPost;
+export default BlogInput;

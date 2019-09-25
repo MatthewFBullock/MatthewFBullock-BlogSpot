@@ -6,11 +6,11 @@ var blogSchema = new mongoose.Schema({
     blogHeaderText: String,
     blogText: String
 });
-var BlogPost = mongoose.model('blogpost', blogSchema);
+var BlogInput = mongoose.model('blogpost', blogSchema);
 
 /// GET blogpost listing
 router.get('/', (req, res, next) => {
-    BlogPost.find().exec((err, posts) => {
+    BlogInput.find().exec((err, posts) => {
         res.send(posts);
     });
 });
@@ -23,7 +23,7 @@ router.post('/', (req, res, next) => {
     db.once('open', function () {
         // we're connected!
     });
-    var blogpost = new BlogPost({ blogHeaderText: req.body.blogHeaderText, blogText: req.body.blogText });
+    var blogpost = new BlogInput({ blogHeaderText: req.body.blogHeaderText, blogText: req.body.blogText });
     blogpost.save((err, post) => {
         if (err) return res.send(err);
         return res.send(post);

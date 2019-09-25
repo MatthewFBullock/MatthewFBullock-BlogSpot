@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import BlogPost from './components/blogpost';
+import BlogInput from './components/bloginput';
 import SideBar from './components/sidebar';
 import BlogOutput from './components/blogoutput';
 import { Component } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <BlogPost onSubmit={this.onSubmit}></BlogPost>
+          <BlogInput onSubmit={this.onSubmit}></BlogInput>
           <SideBar></SideBar>
           <BlogOutput data={this.state.dataEntries}></BlogOutput>
           <p>{this.state.apiResponse}</p>

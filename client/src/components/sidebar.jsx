@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import BlogPost from './blogpost';
+import BlogInput from './bloginput';
 
 class SideBar extends Component {
 
     onChange(e) {
         this.props({
-            blogText: BlogPost.onChange.props.blogText,
+            blogText: BlogInput.onChange.props.blogText,
         });
     }
     render() {
@@ -13,7 +13,7 @@ class SideBar extends Component {
             <aside className="sidebar">
                 <div className="sidebar-text">
                     <h3>Test code</h3>
-                    <h3>{BlogPost.onChange}</h3>
+                    <h3>{BlogInput.onChange}</h3>
                 </div>
             </aside>
         );
